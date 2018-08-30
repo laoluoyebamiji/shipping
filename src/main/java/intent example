@@ -1,0 +1,18 @@
+else if("State".equals(intentName)) {
+                try {
+                    // Get top story in a New York Times category provided by the user.
+                    String state = googlegeolocationapi.getState(request.getIntent().getSlot("state_name").getValue());
+                    System.out.println("The state name is " + state);
+                    PlainTextOutputSpeech out = new PlainTextOutputSpeech();
+                    out.setText("The state name " +
+                            request.getIntent().getSlot("state_name").getValue() + " is " + state);
+                    return SpeechletResponse.newTellResponse(out);
+                } catch(Exception e) {
+                    // Tell the user that something went wrong
+                    System.err.println("Error getting state name");
+                    e.printStackTrace();
+                    PlainTextOutputSpeech errorOut = new PlainTextOutputSpeech();
+                    errorOut.setText("An error happened, please try again");
+                    return SpeechletResponse.newTellResponse(errorOut);
+                }
+            }

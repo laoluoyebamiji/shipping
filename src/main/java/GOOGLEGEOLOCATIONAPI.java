@@ -13,7 +13,7 @@ import java.net.URLConnection;
  * Probably better to use a library if this was a real world thing, but for a demo this is fine
  */
 public class GOOGLEGEOLOCATIONAPI {
-    private static final String API_KEY = "AIzaSyD89fMSWET87bN706ZPkJbxCU783jmoj78";
+    private static final String API_KEY = "no key";
 
     /**
      * Get the top article from a specific new york times category using REST (GET)
@@ -23,7 +23,7 @@ public class GOOGLEGEOLOCATIONAPI {
      */
     public String getState(String address) throws Exception {
         String endpointUrl =
-                String.format("https://maps.googleapis.com/maps/api/geocode/json?address=" + (address) +("&key=AIzaSyD89fMSWET87bN706ZPkJbxCU783jmoj78"),
+                String.format("https://maps.googleapis.com/maps/api/geocode/json?address=" + (address) +("&key= no key"),
                         address.toLowerCase().trim(),
                         API_KEY);
 
